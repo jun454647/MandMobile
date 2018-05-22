@@ -3,7 +3,19 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import mandMobile from 'mand-mobile'
+import FastClick from 'fastclick'
 
+/* 全局样式 */
+import 'mand-mobile/lib/mand-mobile.css'
+/* 全局样式 */
+
+/* FastClick */
+if ('ontouchstart' in window) {
+  FastClick.attach(document.body)
+}
+
+Vue.use(mandMobile)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
