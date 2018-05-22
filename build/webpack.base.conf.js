@@ -83,16 +83,17 @@ module.exports = {
           {
             loader: 'stylus-loader',
             options: {
-              import:['theme.custom.styl']
+              import:['../src/theme.custom.styl']
             }
           }
-        ]
+        ],
+        include: ['node build/dev-server.js']
       },
       {
         test: /\.(png|jpe?g|gif)(\?.*)?$/,
         loader: 'url-loader',
         include: /node_modules\/mand-mobile/
-      },
+      }
     ]
   },
   node: {

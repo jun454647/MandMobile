@@ -8,6 +8,8 @@ import FastClick from 'fastclick'
 
 /* 全局样式 */
 import 'mand-mobile/lib/mand-mobile.css'
+import 'mand-mobile/components/_style/global.styl'
+import './theme.custom.styl'
 /* 全局样式 */
 
 /* FastClick */
