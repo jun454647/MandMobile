@@ -27,21 +27,21 @@ module.exports = {
 **2.index.html 加入JS**
 ```
 (function (window, document) {
-      function resize(){
-        var ww = window.innerWidth;
-        if (ww > window.screen.width) {
-          window.requestAnimationFrame(resize);
-        }
-        else {
-          if (ww > 750) ww = 750;
-          document.documentElement.style.fontSize = ww * 100 / 750 + 'px';
-        }
+   function resize(){
+      var ww = window.innerWidth;
+      if (ww > window.screen.width) {
+        window.requestAnimationFrame(resize);
       }
-      if (document.readyState !== 'loading') {
-        resize();
-      } else {
-        document.addEventListener('DOMContentLoaded', resize);
+      else {
+        if (ww > 750) ww = 750;
+        document.documentElement.style.fontSize = ww * 100 / 750 + 'px';
       }
-      window.addEventListener('resize', resize);
-    })(window, document);
+   }
+   if (document.readyState !== 'loading') {
+      resize();
+   } else {
+      document.addEventListener('DOMContentLoaded', resize);
+   }
+   window.addEventListener('resize', resize);
+})(window, document);
 ```
