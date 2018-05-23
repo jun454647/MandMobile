@@ -2,6 +2,7 @@
   <div class="hello">
     <md-button>Primary</md-button>
     <md-button disabled>Primary Disabled</md-button>
+    <div v-drag class="btn">拖拽</div>
   </div>
 </template>
 
@@ -10,7 +11,8 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      url: require('../assets/logo.png')
     }
   }
 }
@@ -18,18 +20,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  .btn{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    font-size: 14px;
+    border-radius: 50%;
+  }
 </style>

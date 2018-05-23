@@ -12,6 +12,11 @@ import 'mand-mobile/components/_style/global.styl'
 import './theme.custom.styl'
 /* 全局样式 */
 
+/* 全局JS */
+import './filter/filter'
+import './directive/directive'
+/* 全局JS */
+
 /* FastClick */
 if ('ontouchstart' in window) {
   FastClick.attach(document.body)
