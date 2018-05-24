@@ -1,15 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-
+import HOME_ROUTER from '@/app/home/HomeRouter'
+import MINE_ROUTER from '@/app/mine/MineRouter'
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
+    ...HOME_ROUTER,
+    ...MINE_ROUTER
   ]
 })

@@ -1,0 +1,118 @@
+
+$DColor:#c7c7c7;
+@mixin setLine($c: #C7C7C7){
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200%;
+  border: 1px solid $c;
+  color: $c;
+  height: 200%;
+  transform-origin: left top;
+  transform: scale(0.5);
+}
+
+@mixin setTopLine($c: #C7C7C7){
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid $c;
+  color: $c;
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+}
+
+@mixin setBottomLine($c: #C7C7C7){
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid $c;
+  color: $c;
+  transform-origin: 0 100%;
+  transform: scaleY(0.5);
+}
+
+@mixin setLeftLine($c: #C7C7C7){
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-left: 1px solid $c;
+  color: $c;
+  transform-origin: 0 0;
+  transform: scaleX(0.5);
+}
+
+@mixin setRightLine($c: #C7C7C7){
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-right: 1px solid $c;
+  color: $c;
+  transform-origin: 100% 0;
+  transform: scaleX(0.5);
+}
+
+.wx-1px, .wx-1px-t, .wx-1px-b, .wx-1px-l, .wx-1px-r, .wx-1px-tb, .wx-1px-lr{
+  position: relative;
+}
+
+.wx-1px{
+  &:before{
+    @include setLine($DColor);
+  }
+}
+
+.wx-1px-t{
+  &:before{
+    @include setTopLine($DColor);
+  }
+}
+
+.wx-1px-b{
+  &:after{
+    @include setBottomLine($DColor);
+  }
+}
+
+.wx-1px-tb{
+  &:before{
+    @include setTopLine($DColor);
+  }
+  &:after{
+    @include setBottomLine($DColor);
+  }
+}
+
+.wx-1px-l{
+  &:before{
+    @include setLeftLine($DColor);
+  }
+}
+
+.wx-1px-r{
+  &:after{
+    @include setRightLine($DColor);
+  }
+}
+
+.wx-1px-lr{
+  &:before{
+    @include setLeftLine($DColor);
+  }
+  &:after{
+    @include setRightLine($DColor);
+  }
+}

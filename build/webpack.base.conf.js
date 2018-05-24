@@ -33,7 +33,7 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json', '.svg'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
@@ -41,7 +41,7 @@ module.exports = {
   },
   module: {
     rules: [
-      ...(config.dev.useEslint ? [createLintingRule()] : []),
+      // ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -55,6 +55,9 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
+        exclude: [
+          path.resolve(__dirname, '../src/assets'),
+        ],
         options: {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
@@ -90,11 +93,20 @@ module.exports = {
         include: ['node build/dev-server.js']
       },
       {
-        test: /\.(png|jpe?g|gif)(\?.*)?$/,
-        loader: 'url-loader',
-        include: /node_modules\/mand-mobile/
+        test: /\.sass$/,
+        loaders: ['style', 'css', 'sass']
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader',
+        include: [
+          path.resolve(__dirname, '../src/assets/icons'),
+        ],
+        options: {
+          symbolId: 'icon-[name]'
+        }
       }
-    ]
+    ],
   },
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue
