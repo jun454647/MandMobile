@@ -91,7 +91,7 @@ export default {
 
 ```
 **4. 全局引用图标**
-~在main.js中配置。即可全局使用，不需要正对SVG引用~
+^在main.js中配置。即可全局使用，不需要正对SVG引用^
 ```
 /* 全局引用SVG */
 const requireAll = requireContext => requireContext.keys().map(requireContext);
