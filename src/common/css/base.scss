@@ -1,0 +1,13 @@
+/*cjq 2018.05.28*/
+
+
+
+/*多行溢出省略*/
+/*使用 @include ellipsis(3) */
+@mixin ellipsis($line: 2){
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line; /*限制在一个块元素显示的文本的行数*/
+  -webkit-box-orient: vertical; /*排列方向*/
+}

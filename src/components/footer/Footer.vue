@@ -52,7 +52,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../../common/css/common";
+  @import "../../common/css/var";
 
   .footer-wrap{
     width: 100%;

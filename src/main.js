@@ -18,13 +18,12 @@ requireAll(req);
 import 'mand-mobile/lib/mand-mobile.css'
 import 'mand-mobile/components/_style/global.styl'
 import './theme.custom.styl'
-import './common/css/common.scss'
-/* 全局样式 */
+import './common/css/common.css'
+
 
 /* 全局JS */
 import './filter/filter'
 import './directive/directive'
-/* 全局JS */
 
 /* FastClick */
 if ('ontouchstart' in window) {

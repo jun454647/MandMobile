@@ -1,0 +1,26 @@
+@import "var.scss";
+@import "1px.scss";
+@import "base.scss";
+
+html, body, #app, div, ul, p{
+  padding: 0;
+  margin: 0;
+}
+
+/*单行内容溢出省略*/
+.ellipsis{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1; /*限制在一个块元素显示的文本的行数*/
+  -webkit-box-orient: vertical; /*排列方向*/
+}
+
+/*2行内容溢出省略*/
+.ellipsis-2{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2; /*限制在一个块元素显示的文本的行数*/
+  -webkit-box-orient: vertical; /*排列方向*/
+}
